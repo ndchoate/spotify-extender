@@ -5,25 +5,24 @@ import {
     HashRouter
   } from "react-router-dom";
 import { BottomNavigation, BottomNavigationAction } from "@material-ui/core";
-import CssBaseline from "@material-ui/core/CssBaseline";
-import { createMuiTheme } from '@material-ui/core/styles';
-import MuiThemeProvider from "@material-ui/core/styles";
-// import getMuiTheme from "material-ui/styles/getMuiTheme";
-// import darkBaseTheme from "material-ui/styles/baseThemes/darkBaseTheme";
-import Restore from "@material-ui/icons/Restore";
 import Home from "./Home";
 import Stuff from "./Stuff";
-import Contact from "./Contact"; 
+import Contact from "./Contact";
+import NavigationBar from "./NavigationBar";
 
 class Main extends Component {
   render() {
+    // const classes = useStyles();
+
     return (
         <HashRouter>
             <div>
                 <h1>Spotify Playlist Creator</h1>
-                <BottomNavigation showLabels="true">
+                {/* <BottomNavigation showLabels="true" classes={{root: classes.root}}>
                     <BottomNavigationAction label="Home" icon={<Restore />} />
-                </BottomNavigation>
+                </BottomNavigation> */}
+                <NavigationBar></NavigationBar>
+                
                 <ul className="header">
                     <li><NavLink exact to="/">Home</NavLink></li>
                     <li><NavLink to="/stuff">Stuff</NavLink></li>
