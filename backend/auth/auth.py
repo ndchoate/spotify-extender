@@ -52,6 +52,11 @@ def html_for_login_button():
     return html_login_button
 
 
+def url_for_login_button():
+    auth_url = get_sp_oauth_uri()
+    return auth_url
+
+
 def get_sp_oauth_uri():
     auth_url = spotify_oauth.get_authorize_url()
     return auth_url

@@ -1,4 +1,4 @@
-from auth.auth import authorize, html_for_login_button
+from auth.auth import authorize, html_for_login_button, url_for_login_button
 import config
 from flask import Flask
 from recommendations.api import recommendations
@@ -17,7 +17,8 @@ config.init()
 def index():
     authorize()
     if config.sp is None:
-        return html_for_login_button()
+        # return html_for_login_button()
+        return url_for_login_button()
     else:
         return 'Authorized!'
 
